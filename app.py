@@ -15,8 +15,8 @@ import csv
 
 
 app = Flask(__name__)
-cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
-#cors = CORS(app)
+#cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
+cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 app.config['CORS_HEADERS'] = 'Accss-Control-Allow-Origin'
 
