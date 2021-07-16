@@ -34,7 +34,6 @@ index.createIndex({'post': 2}, print_progress=True)
 
 
 @app.route('/api/companies',methods = ['POST'])
-@cross_origin()
 def get_relevant_results():
 
   if request.method == 'POST':
