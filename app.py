@@ -15,7 +15,8 @@ import csv
 
 
 app = Flask(__name__)
-cors = CORS(app)
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
+#cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 ft_model = FastText.load('_fasttext.model')
