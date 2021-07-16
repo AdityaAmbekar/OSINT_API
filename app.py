@@ -1,4 +1,4 @@
-from flask import Flask,request,jsonify,Response
+from flask import Flask,request,jsonify
 from flask_cors import CORS, cross_origin
 from preprocess import prepro
 # from tqdm import tqdm
@@ -69,8 +69,6 @@ def get_relevant_results():
           'title': df.Title.values[i]
       }) 
       
-    return Response(headers={'Access-Control-Allow-Origin':'*'})
-
     return jsonify(
           headers: {
              'Access-Control-Allow-Origin': '*'
@@ -79,6 +77,10 @@ def get_relevant_results():
           success='ok',
           result_data = result_data
       )
+
+@app.route('/')
+def ge_request():
+  return "<h1> You got this </h1>"
 
 if __name__ == '__main__':
     app.run()
