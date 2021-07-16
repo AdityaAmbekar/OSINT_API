@@ -1,4 +1,4 @@
-from flask import Flask,request,jsonify
+from flask import Flask,request,jsonify,Response
 from flask_cors import CORS, cross_origin
 from preprocess import prepro
 # from tqdm import tqdm
@@ -68,6 +68,8 @@ def get_relevant_results():
       result_data.append({
           'title': df.Title.values[i]
       }) 
+      
+    return Response(headers={'Access-Control-Allow-Origin':'*'})
 
     return jsonify(
           headers: {
