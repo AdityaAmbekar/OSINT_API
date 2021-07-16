@@ -70,6 +70,9 @@ def get_relevant_results():
       }) 
 
     return jsonify(
+          headers: {
+             'Access-Control-Allow-Origin': '*'
+          }  
           message='extracted successfully',
           success='ok',
           result_data = result_data
