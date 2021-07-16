@@ -18,7 +18,7 @@ app = Flask(__name__)
 #cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
-app.config['CORS_HEADERS'] = 'Access-Control-Allow-Origin'
+#app.config['CORS_HEADERS'] = 'Access-Control-Allow-Origin'
 
 ft_model = FastText.load('_fasttext.model')
 weighted_doc_vects = []
@@ -36,7 +36,6 @@ index.createIndex({'post': 2}, print_progress=True)
 
 
 @app.route('/api/companies',methods = ['POST'])
-@cross_origin
 def get_relevant_results():
 
   if request.method == 'POST':
